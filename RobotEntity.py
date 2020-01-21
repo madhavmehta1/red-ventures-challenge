@@ -24,7 +24,11 @@ class Robot:
             "robot_type": task.get_robot_type()
         }
         self.completed_task_list.append(completed_task)
-        task_collection.insert_one(completed_task)
+        if task_collection.find({"description": task.get_description(), "eta": task.get_eta(),
+                                "robot_type": task.get_robot_type()}):
+            pass
+        else:
+            task_collection.insert_one(completed_task)
 
     async def do_all_tasks(self):
         await asyncio.gather(*(self.do_task(task) for task in self.task_set))
