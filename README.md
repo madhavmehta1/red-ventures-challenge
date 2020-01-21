@@ -111,3 +111,9 @@ After the cluster is setup, create a database called "robots" and two collection
 ![collections](https://user-images.githubusercontent.com/12778610/72774170-331c8e80-3bcf-11ea-99ae-ad9f77fc0a01.JPG)
 
 Finally, configure the "db.py" file by inserting the connection string that was provided for Python appplications. Insert the user and password fields within the connection string.
+
+# How to Set Up
+In order to run the application, simply type the following command in the root of this project's directory:
+```
+python botomat.py
+```
