@@ -20,15 +20,14 @@ class Robot:
         self.task_set.remove(task)
         completed_task = {
             "description": task.get_description(),
-            "eta": task.get_eta(),
+            "eta": task.get_eta()*1000,
             "robot_type": task.get_robot_type()
         }
         self.completed_task_list.append(completed_task)
-        if task_collection.find({"description": task.get_description(), "eta": task.get_eta(),
-                                "robot_type": task.get_robot_type()}):
-            pass
-        else:
+        result = task_collection.count_documents({"description": task.get_description()})
+        if result == 0:
             task_collection.insert_one(completed_task)
+        return 0
 
     async def do_all_tasks(self):
         await asyncio.gather(*(self.do_task(task) for task in self.task_set))
