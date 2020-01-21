@@ -1,4 +1,4 @@
 from pymongo import MongoClient
 
-client = MongoClient("mongodb+srv://[USER]:[PASS]@rvchallenge-vsqmn.mongodb.net/test?retryWrites=true&w=majority")
+client = MongoClient(" INSERT CONNECTION STRING")
 db = client["robots"]
