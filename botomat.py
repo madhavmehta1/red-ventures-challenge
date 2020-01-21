@@ -53,7 +53,7 @@ def create_custom_tasks(task_set):
         robot_type = input("Please enter the type of robot allowed to complete this task: ")
         new_task = Task(description, eta, robot_type)
         task_set.add(new_task)
-        user_input = input("Would you like to add more tasks? Type Y for yes and N for no: ")
+        user_input = input("\nWould you like to add more tasks (Y/N)?  ")
         if user_input == "N":
             break
     return task_set
