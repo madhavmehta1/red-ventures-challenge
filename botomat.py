@@ -1,4 +1,6 @@
+#!/usr/bin/env python
 from random import choice
+
 import asyncio
 from prettytable import PrettyTable
 
