@@ -120,5 +120,5 @@ python botomat.py
 
 # Demo
 Please watch these gifs to see the demo (click on them to see full screen):
-![demo_part_1]()
-![demo_part_2](https://user-images.githubusercontent.com/12778610/72793410-06cd3600-3c00-11ea-8adb-4481fe410f62.gif)
+![demo_part_1](https://user-images.githubusercontent.com/12778610/72793410-06cd3600-3c00-11ea-8adb-4481fe410f62.gif)
+![demo_part_2](https://user-images.githubusercontent.com/12778610/72794458-a50dcb80-3c01-11ea-9f0d-8e5f0c50254c.gif)
