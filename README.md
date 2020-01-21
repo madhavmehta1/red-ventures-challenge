@@ -97,14 +97,15 @@ To install the Python dependencies for this project, you can do either of the fo
 ## MongoDB Setup
 MongoDB Atlas was used as the storage solution for this application. It lets users set up free MongoDB clusters with a cloud provider (AWS, Azure, GCP). [Follow this link to set up a free cluster.](https://docs.atlas.mongodb.com/getting-started/)
 The interface will provide a checklist of essential things to configure for the cluster - it is important to follow this checklist. Keep note of the user, password, and Python connection string created during this process.
+![connection_string](https://user-images.githubusercontent.com/12778610/72774154-27c96300-3bcf-11ea-84da-6f27d03772b5.JPG)
 
 This is the configuration used for this application:
 - Cloud Provider & Region: AWS, N.Virginia (us-east-1)
 - Cluster Tier: M0 Sandbox (Shared RAM, 512 MB Storage) Encrypted
 - Additional Settings MongoDB 4.2, No backup
-[INSERT IMAGE]
+![cluster_config](https://user-images.githubusercontent.com/12778610/72774124-154f2980-3bcf-11ea-8446-86c24eef1c3a.JPG)
 
 After the cluster is setup, create a database called "robots" and two collections called "robotlist" and "tasklist".
-[INSERT IMAGE]
+![collections](https://user-images.githubusercontent.com/12778610/72774170-331c8e80-3bcf-11ea-99ae-ad9f77fc0a01.JPG)
 
 Finally, configure the "db.py" file by inserting the connection string that was provided for Python appplications. Insert the user and password fields within the connection string.
