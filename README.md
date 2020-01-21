@@ -3,7 +3,8 @@ This application collects a name and robot type from a given list. With this inf
 
 Application features:
   - Create Robots
-  - Create, Assign, and Perform Tasks
+  - Create Custom Tasks
+  - Assign, and Perform Tasks
   - View Leaderboard
     - Robots are only given credit for completing tasks if their robot type is allowed to perform these tasks.
   - View Completed Tasks
