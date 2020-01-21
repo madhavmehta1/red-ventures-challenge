@@ -12,7 +12,7 @@ Application features:
 Tasks have a description and an estimated time to complete.
 
 ```
-{
+[{
     "description": 'do the dishes',
     "eta": 1000,
     "robot_type": 'Unipedal'
