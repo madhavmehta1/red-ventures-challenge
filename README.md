@@ -69,7 +69,7 @@ Tasks have a description and an estimated time to complete.
 ```
 
 # How to Set Up
-Python3 and MongoDB were used to develop this application.
+Python3 and MongoDB 4.2 were used to develop this application.
 
 ## Python Installation
 Please follow these links to install Python on your system:
