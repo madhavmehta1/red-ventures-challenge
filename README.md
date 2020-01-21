@@ -1,19 +1,12 @@
 # BOT-O-MAT
-Use any language to complete this challenge. The implementation is up to you: it can be a command-line application or have a graphical interface.
+This application collects a name and robot type from a given list. With this information, it creates a robot of the specified type and assigns a set of five random tasks. These tasks have estimated times of completion in milliseconds, so the robots "perform" these tasks by waiting for the specified estimated times.
 
-Your application should collect a name and robot type from the types we list below. For each, it should create a Robot of the type the user chooses, e.g. Larry, Bipedal. 
-
-Given the list of tasks below, your application should then assign the Robot a set of five tasks, all of which complete after a duration that we show in milliseconds. 
-
-
-
-- Collect a name and robot type from user.
-- Instantiate a Robot of the type provided by the user with the name provided by the user
-  - for example: Bipedal, Larry
-- Set up methods on Robot to complete tasks from the provided list
-
-## Robot
-Robot completes tasks and removes them from the list when they are done (i.e. enough time has passed since starting the task).
+Application features:
+  - Create Robots
+  - Assign and Perform Tasks
+  - View Leaderboard
+    - Robots are only given credit for completing tasks if their robot type is allowed to perform these tasks.
+  - View Completed Tasks
 
 ## Tasks
 Tasks have a description and an estimated time to complete.
@@ -66,14 +59,43 @@ Tasks have a description and an estimated time to complete.
 }
 ```
 
-## Features to add once the core functionality is complete
-Be creative and have fun! Use this list or create your own features.
-- Allow users to create multiple robots at one time
-- Create a leaderboard for tasks completed by each Robot
-- Create tasks specific for each robot type, this could work in conjunction with the leaderboard. For e.g. robots that are assigned tasks that their type can’t perform won’t get “credit” for finishing the task.
-- Add persistance for tasks, bots and leaderboard stats
+# How to Set Up
+Python3 and MongoDB were used to develop this application.
 
+## Python Installation
+Please follow these links to install Python on your system:
+- [Windows](https://docs.python-guide.org/starting/install3/win/)
+- [Linux](https://docs.python-guide.org/starting/install3/linux/)
+- [Mac OS](https://docs.python-guide.org/starting/install3/osx/)
 
-## Authors
-- Scott Hoffman <https://github.com/scottshane>
-- Olivia Osby <https://github.com/oosby>
+Dependencies:
+- [PyMongo](https://api.mongodb.com/python/current/) was used to provide an interface to communicate with the MongoDB cluster.
+- [dnspython](http://www.dnspython.org/) was needed in order to connect to the MongoDB cluster because the connection string leverages DNS seedlist.
+- [PrettyTable](https://pypi.org/project/PrettyTable/) was used to create the output tables
+
+To install the Python dependencies for this project, you can do either of the following:
+- Use the requirements.txt file. Navigate to the root of this project's directory. Linux/Mac OS users should open a terminal session within the directory and Windows users should open a power shell session within the directory and type the following command:
+  ```
+  pip install -r requirements.txt
+  ```
+- Manually install the dependencies. Enter the following commands:
+  ```
+  pip install pymongo
+  pip install dnspython
+  pip install PrettyTable
+  ```
+
+## MongoDB Setup
+MongoDB Atlas was used as the storage solution for this application. It lets users set up free MongoDB clusters with a cloud provider (AWS, Azure, GCP). [Follow this link to set up a free cluster.](https://docs.atlas.mongodb.com/getting-started/)
+The interface will provide a checklist of essential things to configure for the cluster - it is important to follow this checklist. Keep note of the user, password, and Python connection string created during this process.
+
+This is the configuration used for this application:
+- Cloud Provider & Region: AWS, N.Virginia (us-east-1)
+- Cluster Tier: M0 Sandbox (Shared RAM, 512 MB Storage) Encrypted
+- Additional Settings MongoDB 4.2, No backup
+[INSERT IMAGE]
+
+After the cluster is setup, create a database called "robots" and two collections called "robotlist" and "tasklist".
+[INSERT IMAGE]
+
+Finally, configure the "db.py" file by inserting the connection string that was provided for Python appplications. Insert the user and password fields within the connection string.
