@@ -117,3 +117,8 @@ In order to run the application, simply type the following command in the root o
 ```
 python botomat.py
 ```
+
+# Demo
+Please watch these gifs to see the demo (click on them to see full screen):
+![demo_part_1]()
+![demo_part_2](https://user-images.githubusercontent.com/12778610/72793410-06cd3600-3c00-11ea-8adb-4481fe410f62.gif)
