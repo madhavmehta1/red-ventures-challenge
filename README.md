@@ -7,6 +7,7 @@ Application features:
   - View Leaderboard
     - Robots are only given credit for completing tasks if their robot type is allowed to perform these tasks.
   - View Completed Tasks
+    - Only tasks that have been completed will appear
 
 ## Tasks
 Tasks have a description and an estimated time to complete.
