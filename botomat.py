@@ -48,12 +48,12 @@ def create_custom_tasks(task_set):
           "NOTE: these tasks may not be picked up by the assignment process and if they are not, new robots "
           "must be created until they are picked up.\n")
     while True:
-        description = input("Please enter a description of the task: ")
+        description = input("\nPlease enter a description of the task: ")
         eta = float(input("Please enter an estimated time of completion in milliseconds: "))/float(1000)
         robot_type = input("Please enter the type of robot allowed to complete this task: ")
         new_task = Task(description, eta, robot_type)
         task_set.add(new_task)
-        user_input = input("Would you like to add more tasks? Type Y for yes and N for no.")
+        user_input = input("Would you like to add more tasks? Type Y for yes and N for no: ")
         if user_input == "N":
             break
     return task_set
@@ -235,7 +235,7 @@ def print_menu():
 
     :return:
     """
-    print("1. Add Robot(s)")
+    print("\n1. Add Robot(s)")
     print("2. View Leaderboard")
     print("3. View Completed Tasks")
     print("4. Add Custom Task(s)")

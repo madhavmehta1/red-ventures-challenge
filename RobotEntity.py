@@ -30,7 +30,7 @@ class Robot:
         """
 
         await asyncio.sleep(task.get_eta())  # the program waits for the amount of time specified by the task's eta
-        print(self.get_robot_name() + " has finished task: " + task.get_description())
+        print(self.get_robot_name() + " has finished task: " + task.get_description() + ".")
         if task.get_robot_type() == self.get_robot_type():
             # if the robot types match for the robot and the task, then give the robot credit
             self.increment_task_count()
@@ -58,7 +58,7 @@ class Robot:
         # allows for the robot to 'do' all the tasks in the task set asynchronously
         await asyncio.gather(*(self.do_task(task) for task in self.task_set))
         print(self.get_robot_name() + " has finished all their tasks." + " Their task queue has " +
-              str(len(self.task_set)) + " items." + " Their task count is now " + str(self.get_task_count()))
+              str(len(self.task_set)) + " items." + " Their task count is now " + str(self.get_task_count()) + ".")
 
     def increment_task_count(self):
         """
